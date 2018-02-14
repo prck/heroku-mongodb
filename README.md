@@ -7,7 +7,7 @@ show collections
 
 ```javascript
 const port = process.env.PORT || 3000;
-mongoose.connect(process.env.MONGO_URI || 'mongodb://localhost:27017/TodoApp');
+mongoose.connect(process.env.MONGO_URI+'/TodoApp' || 'mongodb://localhost:27017/TodoApp');
 ```
 
 ```JSON
@@ -24,9 +24,14 @@ $ heroku addons:create mongolab:sandbox -a mon-app-12345
 $ heroku config -a mon-app-12345
 ```
 
-```
+```console
 $ git init
 $ git remote add origin https://github.com/user/repo.git
 $ git remote -v
 $ git push -u origin master
+```
+
+```cmd
+git remote add heroku  https://git.heroku.com/mon-app-12345.git
+git push heroku master
 ```
