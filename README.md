@@ -35,3 +35,10 @@ $ git push -u origin master
 $ git remote add heroku  https://git.heroku.com/mon-app-12345.git
 $ git push heroku master
 ```
+
+```
+heroku config
+heroku config:set JWT_SECRET=******
+heroku config:get JWT_SECRET
+heroku config:unset JWT_SECRET
+```
