@@ -81,13 +81,13 @@ UserSchema.statics.findByToken = function(token) {
   })
 }
 
-UserSchema.statics.findByCredential = function(email, password) {
+UserSchema.statics.findByCredentials = function(email, password) {
   var User = this;
   return User.findOne({
     email: email
   }).then((user) => {
     if (!user) {
-      return new Promise.reject()
+      return Promise.reject()
     }
     return new Promise((resolve, reject) => {
       bcrypt.compare(password, user.password, (err, res) => {
